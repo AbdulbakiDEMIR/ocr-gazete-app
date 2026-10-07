@@ -11,7 +11,7 @@ Sen bu projenin kıdemli yazılım mühendisisin. Token tasarrufu sağlamak, bü
 ### 2. Kural Tetikleyicileri (Rule Triggers)
 Hangi işlemi yapıyorsan, işlem öncesinde ilgili kural dosyasını oku:
 - **Git ve Branch işlemleri:** `[[_rules/git-workflow]]` kurallarına (Conventional Commits, branch kuralları) eksiksiz uy.
-- **Docker, Traefik, Port veya Dağıtım:** Mutlaka `[[_rules/deployment-cicd]]` kurallarını incele. Dışarıya rastgele port açma (`ports: - "3000:3000"` yasaktır); Traefik reverse proxy etiketlerini ve `/opt/core` dizin yapısını gözet.
+- **Dağıtım ve Test Durumu:** Bu projede sunucu dağıtımı (deploy) yoktur; proje salt mobil uygulamadır. Mobil test ve altyapı standartları için `[[_rules/deployment-cicd]]` dosyasını incele.
 - **Kod ve Tasarım:** `[[_rules/code-quality]]` standartlarına uy.
 
 ### 3. Dokümantasyon ve Graf Sorumluluğu
@@ -32,14 +32,14 @@ Kullanıcı "Projeyi kuralım", "Yeni proje başlat" veya benzeri bir başlangı
 
 ### 6. Oturum Hafızası ve Kapanış (Session Memory)
 - Her geliştirme oturumunun veya büyük bir görevin sonunda yeni bir oturum dosyası aç:
-  - Ad formatı: `<YYYY-MM-DD>-<kisa-konu>.md` (sıra numarası kullanma; paralel çalışan geliştiricilerde çakışır).
-  - Konum: platforma göre `.knowledge/sessions/web/` veya `.knowledge/sessions/mobile/`; platformdan bağımsız işler (altyapı, graf, CI) için `.knowledge/sessions/`.
+  - Ad formatı: `<YYYY-MM-DD>-<kisa-konu>.md` (sıra numarası kullanma).
+  - Konum: Mobil geliştirme için `.knowledge/sessions/mobile/`; genel işler (graf, CI) için `.knowledge/sessions/`.
   - Dosyayı ilgili `README.md` içindeki "Oturumlar" listesine wikilink olarak ekle.
 - Bu dosyaya:
   1. Hangi özelliklerin eklendiğini/düzeltildiğini,
   2. Varsa alınan yeni kararları (`[[decisions/...]]`),
   3. Bir sonraki oturumda nereden devam edileceğini (Next Steps) madde madde yaz.
-- Yeni bir oturuma başlarken kendi platformunun ve diğer platformun en son (tarihe göre) oturum notunu oku.
+- Yeni bir oturuma başlarken `.knowledge/sessions/mobile/` altındaki en son oturum notunu oku.
 
 ### 7. Kaynak Bilgi İşleme (Ingest Modu)
 Kullanıcı "Kaynakları tara", "Yeni dökümanları işle", "Bilgileri güncelle" veya "/ingest" dediğinde:
@@ -50,8 +50,7 @@ Kullanıcı "Kaynakları tara", "Yeni dökümanları işle", "Bilgileri güncell
 
 *Not: Proje ilk kurulurken (.knowledge/_schema/onboarding-guide.md çalışırken), eğer inbox içinde dosya varsa kurulum aşamasında bunları da otomatik olarak inceleyip sisteme dahil et.*
 
-### 8. Platform Farkındalığı (Web vs Mobil)
-Bu depo Web ve Mobil geliştirmeyi tek bir ortak grafikle yürütür (onboarding'de seçilmeyen platformun bölümü kaldırılır):
-- **Web Geliştirmesi Yapılırken:** `apps/web/` dizinini baz al, `.knowledge/architecture/web.md` ve `.knowledge/contracts/` dosyalarını oku. Oturum özetini `.knowledge/sessions/web/` altına bırak.
+### 8. Platform Farkındalığı (Mobil Odaklı)
+Bu projede web platformu bulunmamaktadır. Yalnızca mobil uygulama geliştirilecektir:
 - **Mobil Geliştirmesi Yapılırken:** `apps/mobile/` dizinini baz al, `.knowledge/architecture/mobile.md` ve `.knowledge/contracts/` dosyalarını oku. Oturum özetini `.knowledge/sessions/mobile/` altına bırak.
 - Bir endpoint veya veri tipi değiştiğinde `.knowledge/contracts/api-endpoints.md` dosyasını derhal senkronize et.

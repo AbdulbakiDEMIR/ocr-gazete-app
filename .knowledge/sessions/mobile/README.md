@@ -4,7 +4,7 @@ Bu dizin, Mobil uygulama (`apps/mobile/`) geliştirme süreçlerindeki oturum ö
 
 - **Mimari:** [[architecture/mobile|Mobil Mimarisi]]
 - **Sözleşmeler:** [[contracts/api-endpoints|API Sözleşmeleri]]
-- **Senkronizasyon Kuralı:** [[_rules/multi-dev-sync|Web & Mobil Senkronizasyon Kuralları]]
+- **Senkronizasyon Kuralı:** [[_rules/multi-dev-sync|Geliştirici ve Oturum Protokolü]]
 
 ## Oturumlar
-*(Geliştirme yapıldıkça `<YYYY-MM-DD>-<kisa-konu>.md` formatındaki oturum notları buraya wikilink olarak eklenecektir.)*
+- [[sessions/mobile/2026-10-07-onboarding|2026-10-07: Proje Onboarding ve Mobil Mimari Kurulumu]]

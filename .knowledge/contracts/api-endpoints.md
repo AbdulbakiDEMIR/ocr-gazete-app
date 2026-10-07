@@ -1,28 +1,41 @@
-# Ortak API ve Veri Sözleşmeleri (Contracts)
+# Veri Sözleşmeleri ve Modeller (Contracts)
 
-Bu dosya API'yi sağlayan taraf ile onu tüketen istemciler (Web / Mobil) arasındaki veri köprüsüdür. Yeni bir endpoint yazıldığında veya değiştiğinde burası güncellenir; istemci tarafındaki LLM istekleri buradaki tiplere göre kurgular.
+Bu proje bağımsız (standalone) bir mobil uygulama olduğu için harici bir sunucu API'si yerine cihaz içi servis arayüzleri ve veri transfer nesneleri (DTO / Modeller) tanımlanmıştır.
 
 - **Üst Mimari:** [[architecture/overview]]
+- **İlgili Servisler:** [[entities/newspaper-scan|Gazete Tarama Modeli]], [[entities/ocr-service|Yerel OCR Servisi]]
 
-## 1. Genel Kurallar
-- **Base URL:** `{{API_BASE_URL}}` <!-- örn: https://api.domain.com/api/v1 -->
-- **Tüm İsteklerde Başlık (Headers):**
-  - `Content-Type: application/json`
-  - `Authorization: Bearer <TOKEN>` <!-- TODO(onboarding): Kimlik doğrulama yöntemini teyit et. -->
+## 1. Mimari Durumu
+- **Sunucu & Base URL:** Yok (Cihaz içi çevrimdışı çalışma modu)
+- **Depolama Biçimi:** JSON / SQLite yerel kayıtları
 
 ---
 
-## 2. Endpoint Listesi
+## 2. Veri Tipleri ve Modeller
 
-<!-- TODO(onboarding): Aşağıdaki blok yalnızca FORMAT ÖRNEĞİDİR, gerçek bir sözleşme değildir. Projenin gerçek endpoint'leriyle değiştir. -->
+### A. Gazete Tarama Kaydı (`NewspaperScanDTO`)
+```typescript
+interface NewspaperScanDTO {
+  id: string;              // UUID veya benzersiz kimlik
+  title: string;           // Kullanıcı başlığı veya otomatik tarih başlığı
+  imageUri: string;        // Cihazdaki yerel resim dosya yolu
+  rawText: string;         // OCR ile çıkarılan tam metin
+  blocks: OcrBlockDTO[];   // Paragraf/blok bazlı koordinat ve metinler
+  createdAt: string;       // ISO 8601 tarih formatı
+  tags?: string[];         // İsteğe bağlı etiketler (Örn: 'Manşet', 'Ekonomi')
+}
+```
 
-### Örnek: Kimlik Doğrulama (Auth)
-- **POST `/auth/login`**
-  - **İstek (Payload):**
-    ```json
-    { "email": "string", "password": "string" }
-    ```
-  - **Yanıt (Response - 200 OK):**
-    ```json
-    { "token": "string", "user": { "id": "string", "email": "string", "name": "string" } }
-    ```
+### B. OCR Blok Çıktısı (`OcrBlockDTO`)
+```typescript
+interface OcrBlockDTO {
+  text: string;            // Blok metni
+  confidence?: number;     // Güven skoru (0 - 1 arası)
+  boundingBox?: {          // Görüntü koordinatları
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+}
+```

@@ -7,4 +7,4 @@ Bu dizin sistem mimarisini ve teknoloji tercihlerini etkileyen önemli kararlar�
 - **Dosya Adı:** `<NNNN>-<kisa-baslik>.md` (örn: `0001-postgresql-secimi.md`)
 
 ## Alınan Kararlar
-*(Henüz kayıtlı mimari karar bulunmamaktadır. Yeni bir karar alındığında şablon kullanılarak bu dizine eklenir ve buraya wikilink olarak listelenir.)*
+- [[decisions/0001-mobile-react-native-expo-ve-on-device-ocr|ADR-0001: React Native (Expo), Cihaz İçi ML Kit OCR ve Sunucusuz Mobil Mimari]]
