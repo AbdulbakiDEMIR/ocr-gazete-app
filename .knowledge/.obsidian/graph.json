@@ -1,0 +1,53 @@
+{
+    "collapse-filter": false,
+    "search": "",
+    "showTags": false,
+    "showAttachments": false,
+    "hideUnresolved": false,
+    "showOrphans": true,
+    "collapse-color-groups": false,
+    "colorGroups": [
+        {
+            "query": "path:_rules",
+            "color": {
+                "a": 1,
+                "rgb": 14701138
+            }
+        },
+        {
+            "query": "path:architecture",
+            "color": {
+                "a": 1,
+                "rgb": 541935
+            }
+        },
+        {
+            "query": "path:entities",
+            "color": {
+                "a": 1,
+                "rgb": 14725458
+            }
+        },
+        {
+            "query": "path:contracts",
+            "color": {
+                "a": 1,
+                "rgb": 3264175
+            }
+        },
+        {
+            "query": "path:decisions",
+            "color": {
+                "a": 1,
+                "rgb": 3845026
+            }
+        },
+        {
+            "query": "path:sessions",
+            "color": {
+                "a": 1,
+                "rgb": 13382555
+            }
+        }
+    ]
+}

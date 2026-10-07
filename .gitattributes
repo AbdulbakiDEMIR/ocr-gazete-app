@@ -1,0 +1,4 @@
+# Betikler her platformda LF ile çalışmalı (CRLF, bash betiklerini bozar).
+*.sh text eol=lf
+*.py text eol=lf
+*.ps1 text eol=crlf

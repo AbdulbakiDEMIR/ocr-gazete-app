@@ -1,0 +1,14 @@
+# Obsidian yerel ayarları ve önbellek
+.obsidian/workspace*
+.obsidian/cache/
+.obsidian/graph.json.bak
+
+# İşletim sistemi ve Python
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+
+# Geçici dosyalar
+*.bak
+*.tmp
