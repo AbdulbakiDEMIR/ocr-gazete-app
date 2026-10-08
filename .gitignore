@@ -12,3 +12,8 @@ Thumbs.db
 # Geçici dosyalar
 *.bak
 *.tmp
+
+# Bağımlılıklar ve Çevre Değişkenleri
+node_modules/
+.env*
+.expo/

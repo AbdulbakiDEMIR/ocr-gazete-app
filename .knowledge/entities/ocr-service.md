@@ -20,3 +20,4 @@
 ## İlgili Sözleşmeler & Kararlar
 - [[contracts/api-endpoints]]
 - [[decisions/0001-mobile-react-native-expo-ve-on-device-ocr]]
+- [[decisions/0002-kose-kirpma-dosya-adi-kataloglama-ve-onay-akisi]]

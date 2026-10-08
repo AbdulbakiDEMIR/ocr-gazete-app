@@ -9,6 +9,8 @@ Bu dosya sistemin giriş kapısıdır. İlgili bağlantıları takip ederek deta
 ## 📦 Çekirdek Servisler & Modeller
 - [[entities/newspaper-scan|Gazete Tarama Modeli]]: Taranan gazete kupürleri ve arşiv veri modeli
 - [[entities/ocr-service|Yerel OCR Servisi]]: Google ML Kit cihaz içi metin tanıma motoru
+- [[entities/corner-cropper|Köşe Kırpma Modülü]]: 4 noktalı interaktif gazete kupürü kırpıcı
+- [[entities/folder-catalog-manager|Klasör ve Katalog Yöneticisi]]: Dizin okuma, kullanılan/kullanılmayan ayrımı ve dosya adına göre kataloglama
 
 ## 📋 Kurallar & Standartlar
 - [[_rules/git-workflow|Git Protokolleri]]: Git branch ve commit standartları
