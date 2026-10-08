@@ -8,6 +8,9 @@
 ## 1. Yapılan İşlemler
 - `apps/mobile/app.json`: Android için zorunlu olan benzersiz paket adı (`com.bakidemir.ocrgazete`) ve uygulama adı (`Gazete OCR`) yapılandırıldı.
 - `apps/mobile/eas.json`: Expo Application Services (EAS Build) üzerinden bağımsız `.apk` (Android Application Package) çıktısı üreten derleme profili (`preview` ve `production` buildType: `apk`) oluşturuldu.
+- `eas init`: `@expobaki/ocr-gazete-app` projesi Expo hesabına bağlandı (`projectId: cd1f5a16-7c9e-45e3-872f-1ce180276ef6`).
+- Bulut Keystore otomatik olarak oluşturuldu ve güvenli şekilde saklandı.
+- `eas build -p android --profile preview --no-wait` komutu işletilerek bulut APK derleme süreci başlatıldı (Build ID: `85dd79ee-2269-4fed-b8e7-03d0eaab9377`).
 - `.gitignore`: Kök dizine `node_modules/`, `.env*` ve `.expo/` kuralları eklenerek hassas dosyaların ve geçici paketlerin depoya girmesi engellendi.
 - TypeScript derleme doğrulaması (`npx tsc --noEmit`) 0 hata ile teyit edildi.
 - Bilgi grafiği bütünlüğü `python scripts/vault-lint.py --strict` ile doğrulandı.
@@ -19,5 +22,6 @@
 - [[decisions/0004-klasor-manifesti-capraz-kutu-ve-pinch-zoom-akisi]]
 
 ## 3. Sıradaki Adımlar (Next Steps)
-- Dalın (`chore/onboarding` veya ilgili özellik dalının) GitHub uzak deposuna (`origin`) pushlanması.
-- `eas build -p android --profile preview` komutu ile ilk test APK'sının bulutta derlenmesi veya kullanıcının cihazına yüklenip test edilmesi.
+- Bulut derlemesi tamamlandığında üretilen `.apk` dosyasını indirip Android cihaza kurmak.
+- Gerekirse Google Play Store / AAB dağıtım profili eklemek.
+
