@@ -21,6 +21,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "cd1f5a16-7c9e-45e3-872f-1ce180276ef6"
+      }
+    },
+    "owner": "expobaki"
   }
 }
